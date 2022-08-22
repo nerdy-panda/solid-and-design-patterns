@@ -1,0 +1,17 @@
+{
+    "name": "nerdpanda/php",
+    "autoload": {
+        "psr-4": {
+            "Nerdpanda\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
+    }
+}
