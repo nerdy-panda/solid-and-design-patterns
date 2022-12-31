@@ -2,7 +2,7 @@
     "name": "nerdpanda/php",
     "autoload": {
         "psr-4": {
-            "Nerdpanda\\Php\\": "src/"
+            "Nerdpanda\\": "src/"
         }
     },
     "authors": [

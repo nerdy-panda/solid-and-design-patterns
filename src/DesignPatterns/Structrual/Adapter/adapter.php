@@ -1,4 +1,4 @@
-<?php require_once dirname(__DIR__, 1) . '/vendor/autoload.php'; ?>
+<?php require_once dirname(__DIR__, 3) . '/vendor/autoload.php'; ?>
 <?php 
 //author of this class is nerdpanda 
 class user{
@@ -80,11 +80,13 @@ class userAdapter extends user {
 $name = 'nerd';
 $family = 'panda';
 /* $nerdpanda = new user($name , $family ); */
+// replace with userAdvance without edit client codes !!!
 $nerdpanda = new userAdapter($name , $family , new advanceUser($name,$family));
 ?>
 <?php 
 echo 'hello '.$nerdpanda->getName().' '.$nerdpanda->getFamily().PHP_EOL;
 ?>
-<?php 
+<?php
+// new feature from advance user !!!
 echo 'welcome '.$nerdpanda->getFullName().PHP_EOL;
 ?>

@@ -1,0 +1,9 @@
+.rtl {
+    direction: rtl;
+}
+.bolder {
+    font-weight: bolder;
+}
+.text-right{
+    text-align: right;
+}

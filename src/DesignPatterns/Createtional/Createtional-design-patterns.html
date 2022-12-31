@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creational design patterns</title>
+    <link rel="stylesheet" href="../../../assets/css/pages/CreatetionalDesignPatterns.css">
+</head>
+<body>
+<ol>
+    <li>
+        <details>
+            <summary>Singleton :</summary>
+            <section class="rtl">
+                گاهی اوقات در سیستم کلاسی داریم که میخواهیم فقط یک instance از ان ساخته شود !!!
+                ‌با استفاده از این design pattern این کار امکان پذیر است !!!
+            </section>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>FactoryMethod :</summary>
+            <section class="rtl">
+                گاهی اوقات در سیستم کلاسی داریم که
+                گاها در چندین  unit با پارامتر های یکسانی
+                از ان کلاس instance میسازیم !!!
+                <br>
+                instance ساختن از روی ان کلاس به دلیل
+                ورودی های یکسان متد constructor
+                میتواند کار تکراری و سخت و هزینه بر و زمانبر باشد !!!
+                <br>
+                این design pattern وظیفه ساخت
+                object از روی یک class و یا چندین class را بر عهده دارد
+            </section>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>AbstractFactory :</summary>
+            <section class="rtl">
+                دیزاین پترن AbstractFactory وظیفه ساخت object از روی سایر
+                کلاس های factory را دارد !!!‌
+                یعنی AbstractFactory پلی است برای دسترسی به سایر factory های یک
+                موضوع و یا entity !!!
+                <br>
+                و در جایی استفاده میشود که معمولا بخواهیم یک factory کلی و عمومی تر
+                برای factory های یک entity و یا یک موضوع ایجاد کنیم !!!
+                مثلا :
+                <br>
+                <img src="../../../assets/img/abstractFactoryDiagram.svg" alt="">
+            </section>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>Builder :</summary>
+            <section class="rtl">
+                گاهی اوقات در سیستم کلاسی داریم که در زمان instantiate
+                پارامتر های زیادی را از طریق متد construct
+                میگیرد و دیتاهایی که به متد constructor کلاس مورد نظرمان برای هر instance
+                پاس میدهیم عموما متفاوت از دیگر instance هایی است
+                که از روی ان کلاس ساخته شده اند !!!
+                <br>
+                که این باعث میشود  ساخت instance از روی ان کلاس هزینه بر و سخت بشود و
+                همچنین کد برنامه نویسی که از ان کلاس استفاده میکند کثیف بشود !!!‌
+                <br>
+                برای حل این مشکل ما  نمیتوانیم از فکتوری استفاده کنیم
+                زیرا فکتوری عموما برای زمانی استفاده میشود که بخواهیم داده های یکسانی
+                برای هر instance به متد construct پاس بدهیم !!! و برای حل این مشکل باید از
+                دیزاین پترن builder استفاده کنیم تا با استفاده از ان
+                object مورد نظر خودمان را build کنیم !!!
+            </section>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>Prototype :</summary>
+            <section class="rtl">
+                گاهی اوقات در سیستم میخواهیم از یک کلاسی که
+                instantiate از ان سخت و هزینه بر و زمانبر است یک object بسازیم !!!
+                مثلا متد constructor آن کلاس پارامتر های زیادی دارد
+                ویا مثلا پارامتر های متد construct را از دیتابیس و یا از سرور دیگری دریافت میکنیم
+                که این باعث میشود زمان زیادی برای دریافت داده گرفته شود !!!
+                <br>
+                و سپس در طول کد نویسی ممکن است نیاز باشد تا یک object دیگر
+                مشابه با ان object نیاز داشته باشیم اما ما میدانیم instantiate از
+                ان class خیلی زمانبر و سخت است!!
+                <br>
+                <!--
+                گاهی اوقات ممکن است بخواهیم یک instance را از یک objectRepository بگیریم
+                و تغییر دهیم بدون اینکه آن instance در objectRepository کوچکترین تغییری بکند !!!
+                -->
+                <br>
+                این دیزاین پترن به object های ما این امکان را
+                به ما میدهد که  clone و copy شوند !!!
+            </section>
+        </details>
+    </li>
+</ol>
+</body>
+</html>
