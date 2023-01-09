@@ -1,4 +1,4 @@
-<?php require dirname(__DIR__,1).'/vendor/autoload.php';?>
+<?php require dirname(__DIR__,4).'/vendor/autoload.php';?>
 <?php
 $persons = [
     1=> ['name'=>'nerd','family'=>'panda' ] , 
