@@ -41,5 +41,19 @@ $uploader = new uploader();
 $uploader = new uploadWithCheckExistDestination($uploader);
 $uploader = new uploadWithCheckExistFile($uploader);
 $uploaded = $uploader->upload($file,$destination);
-
+?>
+<?php
+/*===== with out proxy =====*/
+/*
+$existDir = is_dir($destination);
+$existFile = file_exists($file);
+if ($existDir && $existFile){
+    $uploader = new uploader();
+    $uploaded = $uploader->upload($file,$destination);
+}
+elseif (!$existDir)
+    throw new Exception("dir  {$destination} not found ");
+elseif(!$existFile)
+    throw new Exception("file {$file} not found ");
+*/
 ?>
