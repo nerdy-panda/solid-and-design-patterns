@@ -203,16 +203,103 @@
   </li>
 
   <li>
+      <!--
+
+      -->
     <details>
       <summary>Interpreter:</summary>
       <section class="rtl text-right">
         <p class="bolder">
-          هدف این دیزاین پترن parse کردن یک string معنا دار
-          به object میباشد
+          هدف این دیزاین پترن Parse کردن یک String ساختارمند ،‌
+          و تبدیل Segment های ان String ساختارمند به object میباشد
+        </p>
+        <p class="bolder">
+          این design pattern در جایی استفاده میشود که بخواهیم یک string
+          ساختارمند را parse کنیم و در مواقعی هر segment انرا به ابجکت تبدیل کنیم !!!
         </p>
         <p>
-          مثلا برنامه نویس کلاینت ما میخواهد یک string معنادار را از کاربر بگیرد
-          و سپس ان string را parse کند و به object های مختلف تبدیل کند !!!
+          مثلا برنامه نویس Client ما میخواهد یک String ساختارمند را از ورودی
+          بگیرد و انرا را در کد نهایی parse و تجزیه و تحلیل کند و سپس هر Segment
+          از ان String ساختارمند را میخواهد تبدیل به یک object بکند !!!
+        </p>
+        <p>
+          اما پردازش ان string ساختارمند و ایجاد object برای هر segment از ان string ساختار مند ،
+          در کد نهایی ممکن است کاری پیچیده و سخت برای برنامه نویس client باشد و قطعا انجام این دو عملیات
+          کد نهایی ما را شلوغ ، پیچیده و کثیف خواهد کرد !!!
+        </p>
+        <p>
+          <!--
+                      برای حل این مشکل میتوانیم از دیزاین پترن interpreter استفاده کنیم
+            و parse ان string ساختارمند و همچنین ایجاد ابجکت به ازای هر segment از ان string ساختارمند
+             را برعهده دیزاین پترن Interpreter بسپاریم!!!
+          -->
+          برای اینکه ان string ساختارمند parse شود و ابجکت هایی به ازای هر segment ان string ساختارمند ایجاد شود
+          |و ان ابجکت ها به برنامه نویس کلاینت تحویل داده شود |میتوانیم از
+          دیزاین پترن interpreter استفاده کنیم !!!
+        </p>
+        <p>
+          <!--
+          اینطوری دیگر برنامه نویس کلاینت ما درگیر پیچیدگی parse کردن
+          ان string و تبدیل هر سگمنت به ابجکت نمیشود و در نتیجه با استفاده از این design pattern کد نهایی ما ....
+
+               و دیگر لازم نیست برنامه نویس client ما درگیر پیچیدگی
+                 عملیات parse ، ان string ساختارمند و همچنین
+                و ساخت ابجکت از هر سگمنت ان استرینگ نممیشود
+          -->
+          اینطوری پیچیدگی عملیات parse ، ان string ساختارمند و همچنین پیچیدگی عملیات
+          تبدیل هر segment از ان string ساختارمند ، به object از چشم برنامه نویس client مخفی میشود
+          و در نهایت این باعث میشود کد نهایی ما دیگر شلوغ و کثیف و پیچیده نشود !!!
+        </p>
+        <section>
+          <details>
+            <summary class="bolder">
+              درک عمیق‌ تر :
+            </summary>
+            <ul>
+              <li>
+                گرفتن اطلاعات افراد در قالب یک string
+                که اطلاعات هر فرد با یک ،‌ جدا شده
+                و باید ان string را parse کنیم
+                و به ازای هر فرد یک ابجکت ایجاد کنیم
+              </li>
+              <li>
+                form validation roles !!!
+              </li>
+              <li>
+                <p>
+                  مثلا زمانی که JavaScript یک متن Json را میخواهد parse کند جاوا اسکریپت
+                  ان Json String را به این Design pattern میدهد حالا این دیزاین پترن
+                  ان Json String را تجزیه میکند و سپس به Object تبدیل میکند !!!
+                </p>
+                <p>
+                  ویا زمانیکه php میخواهد یک serialize query string را unserialize کند ،
+                  php ان serialize query string را به این design pattern میدهد و سپس
+                  این دیزاین پترن آن serialize query string را تحلیل و تجزیه میکند و بعد با توجه
+                  به ان تحلیل و تجزیه serialize query string یک object تحویل ما میدهد !!!
+                </p>
+              </li>
+            </ul>
+          </details>
+        </section>
+      </section>
+    </details>
+  </li>
+
+
+  <li>
+    <details>
+      <summary>Iterator:</summary>
+      <section class="rtl text-right">
+        <p class="bolder">
+          encapsualte عملیات iterate بر روی یک iterable در یونیت های مجزا
+        </p>
+        <p class="bolder">
+          در جایی استفاده میشود که iterate کردن بر روی یک iterable پیچیده باشد و ما بخواهیم
+          iterate کردن برو روی ان iterable را از چشم برنامه نویس client مخفی کنیم !!!
+        </p>
+        <p>
+          مثلا برنامه نویس client میخواهد بر روی یک iterable عملیات iterate را انجام دهد اما عملیات iterate
+          در کد نهایی خیلی پیچیده میشود و باعث
         </p>
       </section>
     </details>
