@@ -203,9 +203,6 @@
   </li>
 
   <li>
-      <!--
-
-      -->
     <details>
       <summary>Interpreter:</summary>
       <section class="rtl text-right">
@@ -224,17 +221,12 @@
         </p>
         <p>
           اما پردازش ان string ساختارمند و ایجاد object برای هر segment از ان string ساختار مند ،
-          در کد نهایی ممکن است کاری پیچیده و سخت برای برنامه نویس client باشد و قطعا انجام این دو عملیات
+          در کد نهایی ، ممکن است کاری پیچیده و سخت برای برنامه نویس client باشد و قطعا انجام این دو عملیات
           کد نهایی ما را شلوغ ، پیچیده و کثیف خواهد کرد !!!
         </p>
         <p>
-          <!--
-                      برای حل این مشکل میتوانیم از دیزاین پترن interpreter استفاده کنیم
-            و parse ان string ساختارمند و همچنین ایجاد ابجکت به ازای هر segment از ان string ساختارمند
-             را برعهده دیزاین پترن Interpreter بسپاریم!!!
-          -->
           برای اینکه ان string ساختارمند parse شود و ابجکت هایی به ازای هر segment ان string ساختارمند ایجاد شود
-          |و ان ابجکت ها به برنامه نویس کلاینت تحویل داده شود |میتوانیم از
+          و سپس در صورت لزوم ان ابجکت ها به برنامه نویس کلاینت تحویل داده شود میتوانیم از
           دیزاین پترن interpreter استفاده کنیم !!!
         </p>
         <p>
@@ -257,26 +249,72 @@
             </summary>
             <ul>
               <li>
-                گرفتن اطلاعات افراد در قالب یک string
-                که اطلاعات هر فرد با یک ،‌ جدا شده
-                و باید ان string را parse کنیم
-                و به ازای هر فرد یک ابجکت ایجاد کنیم
+                <details>
+                  <summary>
+                    به طور مثال میخاهیم اطلاعات user ها را از یک فایل csv دریافت کنیم
+                    و به object تبدیل کنیم !!! :
+                  </summary>
+                  <p>
+                    میتوانیم برای انجام این کار از دیزاین پترن interpreter استفاده کنیم ، و parse ان فایل csv
+                    و همچنین ایجاد object به ازای هر record از ان فایل csv را برعهده دیزاین پترن Interpreter بسپاریم!!!
+                  </p>
+                  <p>
+                    اینطوری برنامه نویس client ما درگیر parse آن فایل csv و درگیر پیچیدگی هایش نمیشود
+                    و همچنین درگیر ساخت object و پیچیدگی هایش از کلاس user به ازای هر record از ان فایل csv نمیشود !!!
+
+                  </p>
+                  <p class="bolder">
+                    ممکنه در ان فایل csv رکورد های تکراری وجود داشته باشد یعنی ممکن است اطلاعات یک فرد دو بار در ان فایل موجود باشد برای حل
+                    این مشکل و جلوگیری از ساخت object های تکراری در سیستم میتوانیم از دیزاین پترن flyWeight در interpreter استفاده کنیم !!!
+                  </p>
+                </details>
               </li>
               <li>
-                form validation roles !!!
+                <details>
+                  <summary>
+                    میتوانیم از این design pattern برای انجام عملیات form Validation استفاده کنیم !!!‌ :
+                  </summary>
+                  <p>
+                    به این صورت که rule ها را از برنامه نویس client به صورت یک string ساختارمند و معنا دار میگیریم
+                    و سپس بواسطه دیزاین پترن Interpreter ان string ساختار مند و معنا دار را parse میکنیم و بعد
+                    آن rule هایی که درون ان string ساختارمند و معنا دار هست را تبدیل به object میکنیم و بعد
+                    میتوانیم فورم و ورودی برنامه نویس client را به راحتی validate کنیم
+                    و یا میتوانیم آن rule object ها را تحویل برنامه نویس بدهیم !!!
+                  </p>
+                  <p>
+                    اینطوری به جای اینکه برنامه نویس client خودش به صورت دستی از هر rule یک ابجکت بسازد
+                    و با class و object هر rule درگیر شود میتواند با دادن یک string معنا دار
+                    به کلاس interpreter ورودی خود را validation کند و همچنین
+                    در صورت لوزوم میتواند به ابجکت rule مورد نظر خود دسترسی پیدا کند !!!
+                  </p>
+                  <p class="bolder">
+                    در اینجا میتوانیم از دیزاین پترن factory برای ساخت rule object ها در interpreter استفاده کنیم !!!
+                  </p>
+                </details>
               </li>
               <li>
-                <p>
-                  مثلا زمانی که JavaScript یک متن Json را میخواهد parse کند جاوا اسکریپت
-                  ان Json String را به این Design pattern میدهد حالا این دیزاین پترن
-                  ان Json String را تجزیه میکند و سپس به Object تبدیل میکند !!!
-                </p>
-                <p>
-                  ویا زمانیکه php میخواهد یک serialize query string را unserialize کند ،
-                  php ان serialize query string را به این design pattern میدهد و سپس
-                  این دیزاین پترن آن serialize query string را تحلیل و تجزیه میکند و بعد با توجه
-                  به ان تحلیل و تجزیه serialize query string یک object تحویل ما میدهد !!!
-                </p>
+                <details>
+                  <summary>
+                    مثال Parse<bdo>-></bdo>
+                    <bdi>Json</bdi>
+                    در Javascript و مثال uniserialize
+                    <bdo dir="">-></bdo>
+                    <bdi>
+                      serialize query string
+                    </bdi> در php :
+                  </summary>
+                  <p>
+                    مثلا زمانی که JavaScript یک متن Json را میخواهد parse کند جاوا اسکریپت
+                    ان Json String را به این Design pattern میدهد حالا این دیزاین پترن
+                    ان Json String را تجزیه میکند و سپس به Object تبدیل میکند !!!
+                  </p>
+                  <p>
+                    ویا زمانیکه php میخواهد یک serialize query string را unserialize کند ،
+                    php ان serialize query string را به این design pattern میدهد و سپس
+                    این دیزاین پترن آن serialize query string را تحلیل و تجزیه میکند و بعد با توجه
+                    به ان تحلیل و تجزیه serialize query string یک object تحویل ما میدهد !!!
+                  </p>
+                </details>
               </li>
             </ul>
           </details>
