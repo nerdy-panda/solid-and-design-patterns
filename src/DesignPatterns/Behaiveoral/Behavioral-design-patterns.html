@@ -201,7 +201,6 @@
       </section>
     </details>
   </li>
-
   <li>
     <details>
       <summary>Interpreter:</summary>
@@ -315,25 +314,47 @@
     </details>
   </li>
 
-
   <li>
     <details>
       <summary>Iterator:</summary>
       <section class="rtl text-right">
         <p class="bolder">
-          encapsualte عملیات iterate بر روی یک iterable در یونیت های مجزا
+          هدف این دیزاین پترن encapsualte عملیات iterate بر روی یک iterable در Unit مجزا میباشد !!!
         </p>
         <p class="bolder">
-          در جایی استفاده میشود که iterate کردن بر روی یک iterable پیچیده باشد و ما بخواهیم
-          iterate کردن برو روی ان iterable را از چشم برنامه نویس client مخفی کنیم !!!
+          این design pattern در جایی استفاده میشود که عملیات iterate وجود داشته باشد
+          و یا iterate بر روی یک iterable پیچیده و سخت باشد و ما میخواهیم
+          پیچیدگی iterate بروی ان iterable را از چشم برنامه نویس client مخفی کنیم !!!
         </p>
         <p>
-          مثلا برنامه نویس client میخواهد بر روی یک iterable عملیات iterate را انجام دهد اما عملیات iterate
-          در کد نهایی خیلی پیچیده میشود و باعث
+          مثلا برنامه نویس client در کدنهایی میخواهد بر روی یک iterable عملیات iterate انجام دهد ،‌
+          اما ممکن است انجام عملیات iterate بر روی ان iterable برای برنامه نویس client
+          کاری پیچیده و سخت باشد و همچنین کد نهایی ما را پیچیده و کثیف بکند !!!
+        </p>
+        <p>
+          برای حل این مشکل با استفاده از دیزاین پترن Iterator میتوانیم پیچیدگی
+          iterate بر روی یک iterable را در یک unit مجزا Encapsulate
+          و از چشم برنامه نویس نهایی مخفی کنیم !!!
+        </p>
+        <p>
+          اینطوری برنامه نویس client ما با استفاده از یک ابجکت و یا یک کلاس iterator میتواند
+          بر روی آن iterable عملیات iterate را به سادگی و بدون درگیر شدن با پیچیدگی های آن انجام دهد
+          و همچنین استفاده از این دیزاین پترن باعث میشود کد نهایی ما شلوغ و پیچیده و کثیف نشود
         </p>
       </section>
     </details>
   </li>
+
+  <li>
+    <details>
+      <summary>Mediator:</summary>
+      <section class="text-right rtl">
+          <p class="bolder"></p>
+          <p class="bolder"></p>
+      </section>
+    </details>
+  </li>
+
 
 
   <li>
@@ -352,8 +373,6 @@
       </section>
     </details>
   </li>
-
-
   <li>
     <details>
       <summary>Visitor:</summary>
