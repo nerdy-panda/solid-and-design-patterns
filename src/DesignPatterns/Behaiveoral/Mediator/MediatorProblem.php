@@ -1,6 +1,6 @@
 <?php require_once dirname(__DIR__, 2) . '/vendor/autoload.php'; ?>
 <?php
-// solution 
+
 class serialGenerator {
     public static function serial():string {
         return substr(sha1(microtime()),0,8);
