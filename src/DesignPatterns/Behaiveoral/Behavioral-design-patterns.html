@@ -389,35 +389,22 @@
         </p>
         <p>
           حالا بواسطه دیزاین پترن mediator آن object هایی که میخواهند با هم communicate و interact کنند ، فقط
-          با شناخت mediator و معرفی شدن به mediator میتوانند بایکدیگر communicate و interact کنند !!!
+          با شناخت mediator و معرفی شدن به mediator میتوانند با یکدیگر communicate و interact کنند !!!
         </p>
         <p>
           به این صورت که درخواست خود را به mediator میدهند و چون mediator به همه object ها اشراف دارد و
           همه ی object ها را میشناسد و با همه object ها ارتباط دارد آن درخواست را تحویل object مورد نظر میدهد !!!
         </p>
         <p>
-
+          بواسطه دیزاین پترن mediator روابط و چسبندگی بین object هایی که میخواهند با هم communicate و interact کنند ،
+          حذف میشود و یا کاهش پیدا میکند به این صورت که دیگر لازم نیست آن object ها برای communicate و interact باهم ،
+          یکدیگر را بشناسند و با هم رابطه داشته باشند و فقط با شناخت و داشتن رابطه با mediator ، میتوانند با هم
+          communicate و interact کنند
         </p>
         <p>
-          بواسطه دیزاین پترن mediator روابط و چسبندگی بین object هایی که میخواهند با هم communicate و interact کنند ،
-          حذف میشود و یا کاهش پیدا میکند زیرا دیگر لازم نیست آن object ها برای communicate و interact باهم ،
-          یکدیگر را بشناسند و با هم رابطه داشته باشند و فقط با شناخت و داشتن رابطه با mediator ، میتوانند با هم
-          communicate و interact کنند و handle کردن communicate و interact بین آبجکت ها را mediator
-          برعهده میگیرد که این باعث شده تا برنامه نویس client ما دیگر در گیر پیچیدگی ایجاد روابط بین ان object ها نشود
-          و در نتیجه کد نهایی ما شلوغ کثیف و پیچیده نمیشود !!!
-          <!--
-                    و در نتیجه کاهش و یا حذف روابط و dependency در آن object ها ، باعث شده تا کد نهایی ما شلوغ کثیف و پیچیده شود !!!
-
-                                بر عهده گرفتن مسعولیت communicate و interact آبجکت ها توسط mediator
-
-          |و mediator است که مسعولیت communicate و interact آبجکت ها را
-          بر عهده دارد|
-
-                      بواسطه دیزاین پترن Mediator دیگر لازم نیست object هایی که میخواهند با هم interact و communication کنند ،
-            با هم رابطه داشته باشند و همدیگر را بشناسند
-            و ارتباط بین آنها کاهش میابد و یا حذف میشود
-          فقط با یک object ارتباط دارند و ان object مسعولیت communicate و Interact ...
-          -->
+          همچنین این دیزاین پترن مسعولیت communicate و interact بین آبجکت ها را برعهده گرفته
+          که این باعث شده تا برنامه نویس client ما دیگر در گیر پیچیدگی ایجاد روابط بین ان object ها
+          و شناساندن ان object ها به یکدیگرنشود و در نتیجه کد نهایی ما شلوغ کثیف و پیچیده نمیشود !!!
         </p>
         <details>
           <summary class="bolder">نکات تکمیلی :</summary>
