@@ -568,25 +568,22 @@
       <summary>Observer:</summary>
       <section class="text-right rtl">
         <p class="bolder">
-          <!-- استاندارد سازی .... ؟-->
-          هدف این design pattern ایجاد یک unit به منظور اجرا کردن unit های دیگر
-          پس از اتفاق افتادن یک Event میباشد و یا بعد از انجام شدن یک کار میباشد !!!
+          هدف این design pattern ایجاد یک unit به منظور اجرا کردن unit هایی که از یک ساختار standard و یا از یک contract پیروی میکنند ،‌
+          پس از اتفاق افتادن یک Event و یا بعد از انجام شدن یک کار میباشد !!!
         </p>
         <p class="bolder">
           این Design Pattern در جایی استفاده میشود که پس از اتفاق افتادن یک Event
           و یا بعد از انجام یک کار باید unit ها و یا Listener هایی اجرا شوند !!!
         </p>
         <p>
-          مثلا برنامه نویس client ما در کدنهایی میخواهد پس از انجام یک کار و یا
-          پس از اتفاق افتادن یک Event ، یونیت ها و یا listener هایی را اجرا کند
-          اما انجام این کار برنامه نویس client ما را درگیر اجرا و
-          instantiate از یونیت و listener های مختلفی میکند !!!
+          مثلا برنامه نویس client ما در کدنهایی میخواهد پس از انجام یک کار و یا پس از اتفاق افتادن یک Event ، یونیت ها و یا listener هایی را
+          اجرا کند اما انجام این کار برنامه نویس client ما را درگیر اجرا و instantiate از یونیت و listener های مختلفی میکند
+          و انجام این کار ممکن است کد نهایی ما را شلوغ ،‌ کثیف و پیچیده بکند
         </p>
         <p>
-          و چون به احتمال زیاد ان unit ها و ان listener ها از یک ساختار استاندارد پیروی نمیکنند و هر unit و یا هر Listener
-          ساختار خاص خودش را دارد ، ممکن است instantiate و اجرای آنها برای برنامه نویس client ما کاری سخت و دشوار باشد و
-          انرا درگیر پیچیدگی instantiate و اجرای هر unit و یا هر Listener بکند و در نتیجه این باعث میشود که
-          کد نهایی ما پیچیده ، شلوغ و کثیف شود !!!
+          و همچنین درصورتیکه ان unit ها و یا ان listener ها از هیچ ساختار standard و یا از هیچ contract ای پیروی و تبعیت نمیکردند و هر
+          یک از آنها ساختار منحصر به فرد و ساختار خاص خودش را داشت ، ممکن است instantiate و اجرای انها برای برنامه نویس client ما کاری
+          سخت و دشوار باشد و انرا درگیر پیچیدگی instantiate و اجرای هر unit و یا هر Listener بکند !!!
           <!--
           مشکلات :
           درگیر شدن برنامه نویس client ما با instantiate و اجرا هر unit و یا listener
@@ -613,7 +610,16 @@
           اجرا شوند بسازیم و کاری کنیم که ان unit ها و یا آن listener ها از یک ساختار standard پیروی بکنند
         </p>
         <p>
+          <!--
           سپس این design pattern ما را مجبور میکند تا یک unit برای اجرای ان listener ها
+          -->
+          سپس این design pattern ما را مجبور میکند تا یک unit بسازیم و ان Listener و یا آن unit ها را در ان register کنیم
+          و همچنین یک method در ان Unit ایجاد کنیم که وقتی صدا زده شد ، آن Listener و یا آن unit هایی که قرار است بعد از
+          اجرای یک کار و یا پس از اتفاق افتادن یک event اجرا شود را اجرا کنیم !!!
+        </p>
+        <p>
+          حالا برنامه نویس client ما به جای اینکه شخصا آن listener ها و یا ان unit ها را اجرا کند
+          و دیگر نیاز نیست درگیر ساختار هر.... شود و با ساختار منحصر به فرد هر .... سروکله بزند
         </p>
         <p>
           بواسطه دیزاین پترن Observer دیگر نیاز نیست برنامه نویس client ما برای اجرای ان unit ها
@@ -628,29 +634,62 @@
         </p>
 
 
+        <details>
+              <summary class="bolder">نکات تکمیلی :</summary>
+              <ul>
+                  <li>
+                      <details>
+                          <summary>تفاوت Observer با Chain Of Responsiblity :</summary>
+                          <p>
+                              در این chain اگر به هر دلیلی انجام یک کار fail شد عموما دیگر به سراغ انجام کار بعدی نمیرویم
 
+                              ===
+                              در chainOfRes انجام کار های پشت سر هم و متصل به هم و اگر در هر کار عملیات return انجام شود
+                              دیگر ادامه کار ها اجرا نمیشود
+                              اما در این الگو اگرreturn شود همچنان ادامه اجرا برقرار است !!!
+                              ====
+                              توی observer یک unit مسعول ذخیره هستش و ان یونیت با حلقع کار ها  را اجرا میکند
+                              اما در chain ما یونیتی که chain ها را ذخیره کند نداریم و هر unit باید از یونیت بعد از خودش اطلاع داشته باشد و انرا اجرا کند !!!
+                          </p>
+                      </details>
+                  </li>
+              </ul>
+          </details>
 
-
-
-
-
-
-        <p class="bolder"></p>
-        در این chain اگر به هر دلیلی انجام یک کار fail شد عموما دیگر به سراغ انجام کار بعدی نمیرویم
-
-        ===
-        در chainOfRes انجام کار های پشت سر هم و متصل به هم و اگر در هر کار عملیات return انجام شود
-        دیگر ادامه کار ها اجرا نمیشود
-        اما در این الگو اگرreturn شود همچنان ادامه اجرا برقرار است !!!
-        ====
-        توی observer یک unit مسعول ذخیره هستش و ان یونیت با حلقع کار ها  را اجرا میکند
-        اما در chain ما یونیتی که chain ها را ذخیره کند نداریم و هر unit باید از یونیت بعد از خودش اطلاع داشته باشد و انرا اجرا کند !!!
       </section>
     </details>
   </li>
 
   <hr>
+  <li>
+    <!--
+    state و یا property های یک object را تبدیل به object میکند و در unit های مجزا encapsulate میکند
+    و همچنین متد هایی که در object نهایی بر روی ان state نغییر ایجاد میکند را به ان object منتقل میکند !!!
 
+    زیرا شاید در ابجکت متد هایی وجود داشته باشد که state را manipulate بکند
+    و ان متد ها به ان object نهایی مرتبط نباشد برای اجرای اصل single responsibility ما آن state و یا آن property را
+     | یک object در نظر میگیریم متد هایی که به ان propery و یا به ان state مرتبط بوده اند را به ان object منتقل میکنیم  |
+     همراه با متد هایی که انرا manipulate میکنند در یک کلاس مجزا Encapsulate میکنیم !!!
+
+
+     این design pattern در جایی استفاده میشود که در یک object متد هایی برای manipulate کردن
+    state و یا property ها وجود داشته باشد
+    -->
+    <details>
+      <summary>State:</summary>
+      <section class="rtl text-right">
+        <p class="bolder">
+          هدف این design pattern
+        </p>
+        <p class="bolder">
+          این Design pattern در جایی استفاده میشود که
+        </p>
+        <p>
+          مثلا برنامه نویس client ما در کدنهایی
+        </p>
+      </section>
+    </details>
+  </li>
   <li>
     <details>
       <summary>Visitor:</summary>
@@ -687,35 +726,7 @@
       <summary>Strategy:</summary>
     </details>
   </li>
-  <li>
-    <!--
-    state و یا property های یک object را تبدیل به object میکند و در unit های مجزا encapsulate میکند
-    و همچنین متد هایی که در object نهایی بر روی ان state نغییر ایجاد میکند را به ان object منتقل میکند !!!
 
-    زیرا شاید در ابجکت متد هایی وجود داشته باشد که state را manipulate بکند
-    و ان متد ها به ان object نهایی مرتبط نباشد برای اجرای اصل single responsibility ما آن state و یا آن property را
-     | یک object در نظر میگیریم متد هایی که به ان propery و یا به ان state مرتبط بوده اند را به ان object منتقل میکنیم  |
-     همراه با متد هایی که انرا manipulate میکنند در یک کلاس مجزا Encapsulate میکنیم !!!
-
-
-     این design pattern در جایی استفاده میشود که در یک object متد هایی برای manipulate کردن
-    state و یا property ها وجود داشته باشد
-    -->
-    <details>
-      <summary>State:</summary>
-      <section class="rtl text-right">
-        <p class="bolder">
-          هدف این design pattern
-        </p>
-        <p class="bolder">
-          این Design pattern در جایی استفاده میشود که
-        </p>
-        <p>
-          مثلا برنامه نویس client ما در کدنهایی 
-        </p>
-      </section>
-    </details>
-  </li>
 </ol>
 </body>
 </html>
