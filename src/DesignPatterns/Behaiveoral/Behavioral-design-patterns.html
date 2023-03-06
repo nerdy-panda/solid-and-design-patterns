@@ -728,9 +728,23 @@
     </details>
   </li>
   <li>
+    <!--
+      همچنین بواسطه این design pattern میتوانیم
+      به صورت dynamic هرگاه ک نیاز بود به class مورد نظرمان
+      state های جدیدی اضافه کنیم و این یعنی آن کلاس princple
+      open-colse را رعایت کرده !!!
+    -->
     <details>
       <summary>State:</summary>
       <section class="rtl text-right">
+        <details>
+          <summary class="bolder">مفهوم state :</summary>
+          <p>
+            state یعنی کلاس ما دارای property ای باشد که آن class به value های آن property حساس باشد و با توجه به
+            value های ان property رفتارش تغییر کند و آن class با توجه به هر یک از value های ان property یک واکنش
+            متفاوت از خودش بروز دهد !!!!
+          </p>
+        </details>
         <p class="bolder">
           هدف این design pattern تبدیل state و یا property های یک کلاس به object های مجزا و همچنین انتقال method هایی که بر
          روی ان state و یا property عملیات انجام میدهند و یا آنرا manipulate میکنند ، ‌از آن class نهایی به ان Object میباشد !!!
@@ -764,6 +778,7 @@
           و ساختار آن class پیچیده نشود و همچنین کد آن class هم شلوغ،پیچیده و کثیف نشود به علاوه استفاده از این design pattern
           باعث شده تا کار با آن class و object هایی که از روی ان ساخته میشوند برای برنامه نویس client ما پیچیده و دشوار نباشد !!!
         </p>
+
       </section>
     </details>
   </li>
