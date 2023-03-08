@@ -728,12 +728,6 @@
     </details>
   </li>
   <li>
-    <!--
-      همچنین بواسطه این design pattern میتوانیم
-      به صورت dynamic هرگاه ک نیاز بود به class مورد نظرمان
-      state های جدیدی اضافه کنیم و این یعنی آن کلاس princple
-      open-colse را رعایت کرده !!!
-    -->
     <details>
       <summary>State:</summary>
       <section class="rtl text-right">
@@ -746,39 +740,70 @@
           </p>
         </details>
         <p class="bolder">
-          هدف این design pattern تبدیل state و یا property های یک کلاس به object های مجزا و همچنین انتقال method هایی که بر
+          هدف این design pattern تبدیل state های یک کلاس به object های مجزا و همچنین انتقال method هایی که در آن class بر
          روی ان state و یا property عملیات انجام میدهند و یا آنرا manipulate میکنند ، ‌از آن class نهایی به ان Object میباشد !!!
         </p>
         <p class="bolder">
-          این design pattern در جایی استفاده میشود که در یک class و یا object متد هایی برای manipulate کردن
-          یک state و یا property وجود داشته باشد
+          این design pattern در جایی استفاده میشود که یک class و یا آبجکت state های مختلفی داشته باشد
+          و method های مختلفی درونش برای manipulate و یا انجام عملیات برو روی آن state ایجاد شده باشد و
+          رفتار آن class با توجه به تغییر آن state عوض شود !!!!
         </p>
-        <p>
-          مثلا در سیستم ، کلاسی میخواهیم ایجاد کنیم که دارای یک state و یا property باشد و ما نیاز داریم در ان کلاس
-          method هایی را برای انجام عملیات و manipulate بر روی ان state و یا property ایجاد کنیم اما انجام این کار
-          باعث میشود method های نامربوطی با توجه به وظیفه ی class مورد نظرما به آن اضافه شود و آن class دیگر
-          single responsible نباشد و اصل تک مسعولیتی خود را از دست بدهد همچنین با اضافه شدن method های نامربوط
-          به آن class باعث میشود method های زیادی در ان class وجود داشته باشد و ساختار آن class پیچیده شود و همچنین
-          کد ان class نیز پیچیده ، شلوغ و کثیف شود و کار با ان کلاس برای برنامه نویس client ما پیچیده ، سخت و دشوار شود‌ !!!
-        </p>
+        <section>
+            <p>
+                مثلا در سیستم ، کلاسی میخواهیم ایجاد کنیم که دارای state های مختلفی باشد و ما نیاز داریم در ان کلاس
+                method هایی را برای انجام عملیات و manipulate بر روی ان state ایجاد کنیم اما انجام این کار
+                باعث میشود :
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        اگر در آینده خواستیم حالت ها و یا state های جدیدی به آن class اضافه کنیم باید آن class را
+                        به صورت دستی تغییر بدهیم و آن state ها را به آن class و method هایش اضافه کنیم که این کار
+                        hard code است و باعث میشود دیگر class ما برا اضافه کردن state های جدید dynamic نباشد
+                        و یا به عبارتی دیگر این کار باعث میشود open/close principle در آن class اجرا نشود !!!
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        method های نامربوطی با توجه به وظیفه ی class مورد نظرما به آن اضافه شود و آن class دیگر
+                        single responsible نباشد و اصل تک مسعولیتی خود را از دست بدهد !!!
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        با اضافه شدن آن method های نامربوط به آن class باعث میشود method های زیادی در ان class وجود داشته
+                        باشد و ساختار آن class پیچیده شود و همچنین کد ان class نیز پیچیده ، شلوغ و کثیف شود و کار با ان class
+                        برای برنامه نویس client ما پیچیده ، سخت و دشوار شود‌ !!!
+                    </p>
+                </li>
+            </ol>
+        </section>
         <p>
           برای حل این مشکلات میتوانیم از دیزاین پترن State استفاده کنیم به این صورت که این design pattern ما را مجبور میکند
-          تا ان state و یا آن property را یک object در نظر بگیریم و method هایی که در class نهایی وظیفه انجام عملیات
+          تا هر یک از ان state ها را یک object در نظر بگیریم و method هایی که در class نهایی وظیفه انجام عملیات
           بر روی آن و یا manipulate آنرا بر عهده داشتند را از آن class نهایی به آن object منتقل کنیم !!!
         </p>
         <p>
-          حالا برنامه نویس client ما وقتی میخواهد بر روی آن state و یا property از آن class نهایی عملیاتی انجام دهد و یا آنرا manipulate کند ،
-          به جای اینکه مستقیما method هایی را بر روی آن class و یا object نهایی call کند میتواند از آن object و یا class نهایی object آن
-          state و یا property را تحویل بگیرد و آن method ها را بر روی ان object ای که تحویل گرفته call کند !!!
+          حالا برنامه نویس client ما وقتی میخواهد بر روی state آن class نهایی ، عملیاتی انجام دهد و یا آنرا manipulate کند ، به جای اینکه
+          مستقیما method هایی را بر روی آن class و یا object نهایی call کند میتواند از آن object و یا class نهایی object آن state را
+          تحویل بگیرد و آن method ها را بر روی ان object ای که تحویل گرفته call کند !!!
         </p>
-        <p>
-          بواسطه دیزاین پترن state دیگر لازم نیست برای انجام عملیات و یا manipulate بر روی یک state و یا property از یک class
-          متد های بی ربط و خارج از وظیفه ی آن class ، درون آن class ایجاد کنیم و آن Method ها را درون object و یا class ای که
-          برای state میسازیم ایجاد میکنیم که این کار باعث میشود آن class نهایی ما تک مسعولیتی و یا single responsible باقی بماند
-          و ساختار آن class پیچیده نشود و همچنین کد آن class هم شلوغ،پیچیده و کثیف نشود به علاوه استفاده از این design pattern
-          باعث شده تا کار با آن class و object هایی که از روی ان ساخته میشوند برای برنامه نویس client ما پیچیده و دشوار نباشد !!!
-        </p>
-
+        <section>
+          <section>
+            <p>
+              بواسطه این Design Pattern دیگر لازم نیست زمانیکه میخواهیم state های جدیدی را به آن class اضافه کنیم به صورت دستی
+              و hard code این کار را انجام دهیم و با استفاده از این design pattern اضافه کردن state های جدید به آن class به صورت
+              Dynamic انجام میشود و یا به عبارتی دیگر این design pattern باعث میشود open/close principle در ان class رعایت شود
+            </p>
+            <p>
+              و همچنین دیگر نیاز نیست برای انجام عملیات و یا manipulate بر روی یک state از یک class ، متد های بی ربط و خارج از وظیفه ی
+              آن class ، درون آن class ایجاد کنیم و آن Method ها را درون object و یا class ای که برای state میسازیم ایجاد میکنیم که این
+              کار باعث میشود آن class نهایی ما تک مسعولیتی و یا single responsible باقی بماند و ساختار آن class پیچیده نشود و همچنین کد
+              آن class هم شلوغ ، پیچیده و کثیف نشود به علاوه استفاده از این design pattern باعث شده تا کار با آن class و object هایی که
+              از روی ان ساخته میشوند برای برنامه نویس client ما پیچیده و دشوار نباشد !!!
+            </p>
+          </section>
+        </section>
       </section>
     </details>
   </li>
