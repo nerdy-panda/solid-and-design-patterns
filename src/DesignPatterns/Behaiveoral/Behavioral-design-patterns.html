@@ -732,12 +732,23 @@
       <summary>State:</summary>
       <section class="rtl text-right">
         <details>
-          <summary class="bolder">مفهوم state :</summary>
-          <p>
-            state یعنی کلاس ما دارای property ای باشد که آن class به value های آن property حساس باشد و با توجه به
-            value های ان property رفتارش تغییر کند و آن class با توجه به هر یک از value های ان property یک واکنش
-            متفاوت از خودش بروز دهد !!!!
-          </p>
+          <summary class="bolder">مفاهیم قبل از شروع -></summary>
+          <ul>
+            <ol>
+              <li>
+                <details>
+                  <summary class="bolder">
+                    مفهوم State :
+                  </summary>
+                  <p>
+                    state یعنی کلاس ما دارای property ای باشد که آن class به value های آن property حساس باشد و با توجه به
+                    value های ان property رفتارش تغییر کند و آن class با توجه به هر یک از value های ان property یک واکنش
+                    متفاوت از خودش بروز دهد !!!!
+                  </p>
+                </details>
+              </li>
+            </ol>
+          </ul>
         </details>
         <p class="bolder">
           هدف این design pattern تبدیل state های یک کلاس به object های مجزا و همچنین انتقال method هایی که در آن class بر
@@ -745,14 +756,14 @@
         </p>
         <p class="bolder">
           این design pattern در جایی استفاده میشود که یک class و یا آبجکت state های مختلفی داشته باشد
-          و method های مختلفی درونش برای manipulate و یا انجام عملیات برو روی آن state ایجاد شده باشد و
-          رفتار آن class با توجه به تغییر آن state عوض شود !!!!
+          و رفتار آن class با توجه به تغییر آن state عوض شود و همچنین method های مختلفی درون ان class
+          برای manipulate و یا انجام عملیات بر روی آن state ایجاد شده باشد !!!!
         </p>
         <section>
             <p>
-                مثلا در سیستم ، کلاسی میخواهیم ایجاد کنیم که دارای state های مختلفی باشد و ما نیاز داریم در ان کلاس
-                method هایی را برای انجام عملیات و manipulate بر روی ان state ایجاد کنیم اما انجام این کار
-                باعث میشود :
+              مثلا در سیستم ، کلاسی میخواهیم ایجاد کنیم که دارای state های مختلفی باشد و رفتار ان class با توجه به تغییر ، state ها
+              عوض شود و همچنین ما نیاز داریم در ان کلاس method هایی را برای انجام عملیات و manipulate بر روی ان state ایجاد کنیم
+              اما انجام این کار باعث میشود :
             </p>
             <ol>
                 <li>
