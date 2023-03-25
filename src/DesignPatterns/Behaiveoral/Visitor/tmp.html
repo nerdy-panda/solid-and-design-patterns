@@ -6,21 +6,42 @@
 </head>
 <body>
 <p>
+  <!--
+  encapsulate  ✔️
+  -->
   هدف این Design Pattern
 </p>
 <p>
     این Design Pattern در جایی استفاده میشود که
 </p>
 <!--
+much methods
+bad structure | dirty code
 srp
 ocp
-much methods
-bad structure
-dirty code
 hard work with that for client programmer
 -->
+<!--
+و همچنین ممکن است آن method ها خارج از وظیفه ی آن class باشند
+و وجود آن method ها باعث شوند که دیگر آن کلاس single responsible نباشد
+
+در نتیجه تمامی اینها باعث شده تا کار با ان class برای برنامه نویس client ما پیچیده ،‌سخت و دشوار شود
+
+-->
 <p>
-    مثلا در سیستم class ای داریم که دارای method هایی برای انجام عملیات و سپس manipulate بر روی object های ان class میباشد
+    مثلا در سیستم یک object داریم که برنامه نویس client ما بواسطه method هایی که درون آن object وجود دارد
+    بر روی ان object یک پردازش و یا عملیات انجام میدهد و سپس آن دستکاری میشود و
+    یا آن object را تغییر داده میشود اما وجود method هایی که بر روی آن object
+    یک پردازش و یا عملیات انجام میدهند و سپس انرا دستکاری میکنند و یا آنرا تغییر میدهند
+
+    مثلا در سیستم class ای داریم که دارای method هایی میباشد که هر یک از instance های ان class میتوانند بواسطه ان method ها ، بر
+    روی خودشان عملیات و یا پردازشی را انجام دهد و یا خودشان را با بواسطه از ان method ها ، تغییر بدهند و یا دستکاری کنند اما وجود چنین
+    method هایی در ان class باعث میشود تعداد method های آن class بیش از حد زیاد شود و ساختار و code آن class نیز پیچیده ، شلوغ
+    و کثیف شود
+
+    <!--
+    مثلا در سیستم class ای داریم که دارای method هایی میباشد که بواسطه ان method ها  برای انجام عملیات و سپس manipulate بر روی object های ان class میباشد
+    -->
 </p>
 <p>
     <!--
