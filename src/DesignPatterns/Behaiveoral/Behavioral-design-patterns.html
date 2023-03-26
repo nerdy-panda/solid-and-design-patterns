@@ -1054,11 +1054,31 @@
         </p>
         <p>
           برای حل این مشکلات میتوانیم از دیزاین پترن Visitor استفاده کنیم به این صورت که این Design Pattern ما را مجبور میکند تا
-
+          آن method هایی که در class آن object یک عملیات و یا پردازشی را بر روی ان object انجام میدهند و سپس آن object را
+          تغییر میدهند و یا manipulate میکنند را در یک class مجزا و جدا Encapsulate کنیم و برای هر یک از ان method ها یک
+          class مجزا بسازیم !!!
         </p>
         <p>
+          <!--
+          ocp
+          متد های نامربوط و بی ربط نسبت به وظیفه
 
+          اینطوری دیگر برنامه نویس client ما وقتی میخاهد .... دیگر نیاز نیست ....
+          -->
+          اینطوری دیگر تعداد method های class آن object زیاد نمیشود و دیگر ساختار و code آن class پیچیده ، شلوغ و کثیف نمیشود
+          و همچنین دیگر در class آن object متد های نامربوط و بی ربط نسبت به وظیفه اش وجود نداشته باشد و این باعث میشود که
+          class آن object دیگر single responsibility principle را نقض نکند
         </p>
+        <details>
+          <summary class="bolder">
+            نکات تکمیلی:
+          </summary>
+          <ol>
+            <li>
+
+            </li>
+          </ol>
+        </details>
       </section>
     </details>
   </li>
