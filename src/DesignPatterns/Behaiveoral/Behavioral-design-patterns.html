@@ -1065,9 +1065,21 @@
 
           اینطوری دیگر برنامه نویس client ما وقتی میخاهد .... دیگر نیاز نیست ....
           -->
-          اینطوری دیگر تعداد method های class آن object زیاد نمیشود و دیگر ساختار و code آن class پیچیده ، شلوغ و کثیف نمیشود
-          و همچنین دیگر در class آن object متد های نامربوط و بی ربط نسبت به وظیفه اش وجود نداشته باشد و این باعث میشود که
-          class آن object دیگر single responsibility principle را نقض نکند
+          اینطوری دیگر تعداد method های class آن object زیاد نمیشود و دیگر ساختار و code آن class پیچیده ، شلوغ و کثیف نمیشود و
+          همچنین بواسطه این Design Pattern دیگر در class آن object متد های نامربوط و بی ربط نسبت به وظیفه ی آن class وجود
+          نخواهد داشت که این باعث میشود دیگر single responsibility principle در class آن آبجکت نقض نشود
+
+          به علاوه بواسطه این Design Pattern دیگر open / close principle در class آن object نقض نمیشود و این یعنی
+          برنامه نویس client ما به راحتی و به آسانی و بدون دادن تغییر در class آن object و به صورت Dynamic ، میتواند الگوریتم
+          عملیات مورد نظر خودش را به class آن object اضافه کند تا آن instance را پردازش کند و سپس انرا تغییر و یا دستکاری کند
+
+          همچنین بواسطه این Design Pattern دیگر نیاز نیست برنامه نویس client ما برای ایجاد عملیات مورد نظر خودش
+          class آن object را تغییر دهد و method جدیدی را به class آن object اضافه کند زیرا بواسطه
+          این دیزاین پترن دیگر open/close principle در class آن object نقض نشده و این یعنی برنامه نویس client ما به راحتی و
+          به آسانی و به صورت Dynamic و بدون دادن هر گونه تغییر در class آن object میتواند عملیات مورد نظر خودش را به class آن
+          object اضافه کند
+
+          در نتیجه همهی اینها با هم باعث شده که کار با object های ان class دیگر برای برنامه نویس client ما پیچیده ، دشوار و سخت نباشد !!!
         </p>
         <details>
           <summary class="bolder">
